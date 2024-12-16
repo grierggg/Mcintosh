@@ -103,38 +103,33 @@ class McIntoshScraper:
             return None
 
     def scrape_dealers(self):
-        """Cover major Australian metropolitan areas"""
-        # Major Australian metro areas with coordinates
+        """Cover major US metropolitan areas"""
+        # Major US metro areas with coordinates
         locations = [
-            # New South Wales
-            ("2000", -33.8688, 151.2093),  # Sydney
-            ("2300", -32.9283, 151.7817),  # Newcastle
-            ("2500", -34.4278, 150.8931),  # Wollongong
+            # Northeast
+            ("10001", 40.7505, -73.9965),  # NYC
+            ("02108", 42.3588, -71.0707),  # Boston
+            ("19102", 39.9516, -75.1665),  # Philadelphia
             
-            # Victoria
-            ("3000", -37.8136, 144.9631),  # Melbourne
-            ("3220", -38.1485, 144.3613),  # Geelong
+            # West Coast
+            ("90048", 34.0741, -118.3725),  # LA
+            ("94102", 37.7793, -122.4192),  # San Francisco
+            ("98101", 47.6097, -122.3331),  # Seattle
             
-            # Queensland
-            ("4000", -27.4705, 153.0260),  # Brisbane
-            ("4217", -28.0167, 153.4000),  # Gold Coast
-            ("4870", -16.9186, 145.7781),  # Cairns
+            # Midwest
+            ("60601", 41.8843, -87.6253),  # Chicago
+            ("48226", 42.3314, -83.0458),  # Detroit
+            ("55401", 44.9778, -93.2650),  # Minneapolis
             
-            # Western Australia
-            ("6000", -31.9505, 115.8605),  # Perth
-            ("6230", -33.3283, 115.6400),  # Bunbury
+            # South
+            ("30303", 33.7490, -84.3880),  # Atlanta
+            ("75201", 32.7831, -96.7987),  # Dallas
+            ("77002", 29.7604, -95.3698),  # Houston
+            ("33131", 25.7617, -80.1918),  # Miami
             
-            # South Australia
-            ("5000", -34.9285, 138.6007),  # Adelaide
-            
-            # Tasmania
-            ("7000", -42.8821, 147.3272),  # Hobart
-            
-            # Northern Territory
-            ("0800", -12.4634, 130.8456),  # Darwin
-            
-            # ACT
-            ("2600", -35.2809, 149.1300)   # Canberra
+            # Mountain
+            ("80202", 39.7392, -104.9903),  # Denver
+            ("85004", 33.4484, -112.0740)   # Phoenix
         ]
 
         all_dealers = []
@@ -163,7 +158,7 @@ class McIntoshScraper:
             return
             
         df = pd.DataFrame(dealers)
-        csv_filename = 'mcintosh_dealers_australia.csv'
+        csv_filename = 'mcintosh_dealers_current.csv'
         df.to_csv(csv_filename, index=False)
         logging.info(f"Saved {len(dealers)} unique dealers to {csv_filename}")
 
