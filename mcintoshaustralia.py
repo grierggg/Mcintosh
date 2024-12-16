@@ -36,11 +36,7 @@ class McIntoshScraper:
                 'userLat': str(lat),
                 'userLong': str(lon),
                 'zipCode': zip_code,
-<<<<<<< HEAD
                 'country': 'AU'
-=======
-                'country': 'AU'  # Changed to Australia
->>>>>>> 5e76e1a4bbc4f2d08a3127e9573534c211b05dc8
             }
             
             response = requests.post(
